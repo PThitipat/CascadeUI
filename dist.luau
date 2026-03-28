@@ -31,10 +31,11 @@ b.ReactiveTable(c,d)local e,f=table.clone(c or{}),{}local g={__index=function(g,
 h)return e[h]end,__newindex=function(g,h,i)e[h]=i if d then d(e)end end,__len=
 function()return#e end,__pairs=function()return pairs(e)end,__ipairs=function()
 return ipairs(e)end,__metatable=false}return setmetatable(f,g)end function b.
-Wrap(c,d,e,f)local g={}setmetatable(g,{__index=function(h,i)if c[i]~=nil then
+Wrap(c,d,e,f)local g={}setmetatable(g,{__index=function(h,i)local _raw=rawget(g,i)if _raw~=nil then return _raw end
+if c[i]~=nil then
 return c[i]elseif e then local j,k=pcall(function()return e[i]end)if j then
 return k end end return end,__newindex=function(h,i,j)local k=d[i]if k then k(j)
-if not(f and table.find(f,i))then c[i]=j end elseif e then local l=pcall(
+if not(f and table.find(f,i))then c[i]=j end elseif type(j)=='function' then rawset(g,i,j)elseif e then local l=pcall(
 function()e[i]=j end)if not l then c[i]=j end else c[i]=j end end})return g end
 return b end function a.c()local c=a.cache.c if not c then c={c=b()}a.cache.c=c
 end return c.c end end do local b=function()local b,c,d=a.b(),a.c(),{}function d
