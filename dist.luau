@@ -2443,10 +2443,9 @@ BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,
 Image='rbxassetid://137248392050045',ImageColor3=Color3.fromRGB(0,0,0),Position=
 UDim2.fromScale(0.5,0.5),Size=UDim2.fromOffset(9,15),__dynamicKeys={ImageColor3=
 b.Theme.Text.Tertiary[1],ImageTransparency=b.Theme.Text.Tertiary[2]},
-__contextKeys={ImageColor3=function()local k,l=g>1,j.Theme.Text return if k then l.
-Secondary[1].Value else l.Tertiary[1].Value end end,ImageTransparency=function()local
-k,l=g>1,j.Theme.Text return if k then l.Secondary[2].Value else l.Tertiary[2].Value
-end end}}},e'TextButton'{Name='Forward',BackgroundColor3=Color3.fromRGB(255,255,255)
+__contextKeys={ImageColor3=function()local k,l=g>1,j.Theme.Text if k then return l.Secondary[1].Value end return l.Tertiary[1].Value end,ImageTransparency=function()local
+k,l=g>1,j.Theme.Text if k then return l.Secondary[2].Value end return l.Tertiary[2].Value
+end}}},e'TextButton'{Name='Forward',BackgroundColor3=Color3.fromRGB(255,255,255)
 ,BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,
 FontFace=Font.new'rbxasset://fonts/families/SourceSansPro.json',LayoutOrder=1,
 Size=UDim2.fromOffset(27,20),Text='',TextColor3=Color3.fromRGB(0,0,0),TextSize=
@@ -2455,10 +2454,9 @@ Color3.fromRGB(255,255,255),BackgroundTransparency=1,BorderColor3=Color3.
 fromRGB(0,0,0),BorderSizePixel=0,Image='rbxassetid://95285878898359',Position=
 UDim2.fromScale(0.5,0.5),Size=UDim2.fromOffset(9,15),__dynamicKeys={ImageColor3=
 b.Theme.Text.Tertiary[1],ImageTransparency=b.Theme.Text.Tertiary[2]},
-__contextKeys={ImageColor3=function()local k,l=g<#f,j.Theme.Text return if k then l.
-Secondary[1].Value else l.Tertiary[1].Value end end,ImageTransparency=function()local
-k,l=g<#f,j.Theme.Text return if k then l.Secondary[2].Value else l.Tertiary[2].Value
-end end}}}},e'Frame'{Name='SidebarButton',AutomaticSize=Enum.AutomaticSize.XY,
+__contextKeys={ImageColor3=function()local k,l=g<#f,j.Theme.Text if k then return l.Secondary[1].Value end return l.Tertiary[1].Value end,ImageTransparency=function()local
+k,l=g<#f,j.Theme.Text if k then return l.Secondary[2].Value end return l.Tertiary[2].Value
+end}}}},e'Frame'{Name='SidebarButton',AutomaticSize=Enum.AutomaticSize.XY,
 BackgroundColor3=Color3.fromRGB(255,255,255),BackgroundTransparency=1,
 BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,Size=UDim2.fromOffset(38,34
 ),e'ImageButton'{Name='Image',AnchorPoint=Vector2.new(0.5,0.5),AutoButtonColor=
@@ -2501,11 +2499,8 @@ SearchField.Body.__instance,__dynamicKeys={ImageColor3=b.Theme.Text.
 PrimaryAccent[1],ImageTransparency=b.Theme.Text.PrimaryAccent[2]}}h.SearchField.
 Body.Parent=h.Trailing local k=function()if not j then return end local k,l,m=h.
 Back:FindFirstChild'Image',h.Forward:FindFirstChild'Image',j.Theme.Text if k
-then local n=g>1 k.ImageColor3=if n then m.Secondary[1].Value else m.Tertiary[1].
-Value end k.ImageTransparency=if n then m.Secondary[2].Value else m.Tertiary[2].Value end h.
-Back.Interactable=n end if l then local n=g<#f l.ImageColor3=if n then m.Secondary[
-1].Value else m.Tertiary[1].Value end l.ImageTransparency=if n then m.Secondary[2].Value
-else m.Tertiary[2].Value end h.Forward.Interactable=n end end local l,m=setmetatable({
+then local n=g>1 if n then k.ImageColor3=m.Secondary[1].Value k.ImageTransparency=m.Secondary[2].Value else k.ImageColor3=m.Tertiary[1].Value k.ImageTransparency=m.Tertiary[2].Value end h.
+Back.Interactable=n end if l then local n=g<#f if n then l.ImageColor3=m.Secondary[1].Value l.ImageTransparency=m.Secondary[2].Value else l.ImageColor3=m.Tertiary[1].Value l.ImageTransparency=m.Tertiary[2].Value end h.Forward.Interactable=n end end local l,m=setmetatable({
 },{__newindex=function(l,m,n)rawset(f,m,n)k()end,__index=function(l,m)return f[m
 ]end,__len=function()return#f end}),function(l)if j and j.Tabs then for m,n in
 pairs(j.Tabs)do if n.__container==l then n.Selected=true else n.Selected=false
@@ -2881,8 +2876,8 @@ FontFace=Font.new'rbxasset://fonts/families/SourceSansPro.json',LayoutOrder=h.
 Tabs and#h.Tabs or 1,Size=UDim2.new(1,0,0,28),Text='',TextColor3=Color3.fromRGB(
 0,0,0),TextSize=14,Parent=i,__dynamicKeys={BackgroundColor3=b.Theme.Controls.
 SelectionFocused[1],BackgroundTransparency=b.Theme.Controls.SelectionFocused[2]}
-,__contextKeys={BackgroundTransparency=function()return if c.Selected then b.Theme.
-Controls.SelectionFocused[2].Value else 1 end end},g'UICorner'{Name='UICorner',
+,__contextKeys={BackgroundTransparency=function()if c.Selected then return b.Theme.
+Controls.SelectionFocused[2].Value end return 1 end},g'UICorner'{Name='UICorner',
 CornerRadius=UDim.new(0,5)},g'UIListLayout'{Name='UIListLayout',FillDirection=
 Enum.FillDirection.Horizontal,HorizontalFlex=Enum.UIFlexAlignment.SpaceBetween,
 Padding=UDim.new(0,14),SortOrder=Enum.SortOrder.LayoutOrder,VerticalAlignment=
@@ -2896,10 +2891,10 @@ fromRGB(255,255,255),BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0)
 LineHeight=0,RichText=true,Size=UDim2.new(1,-22,0,20),TextSize=15,TextTruncate=
 Enum.TextTruncate.AtEnd,TextXAlignment=Enum.TextXAlignment.Left,__dynamicKeys={
 TextColor3=b.Theme.Text.SelectionPrimary[1],TextTransparency=b.Theme.Text.
-SelectionPrimary[2]},__contextKeys={TextColor3=function()return if c.Selected then b
-.Theme.Text.SelectionPrimary[1].Value else b.Theme.Text.Primary[1].Value end end,
-TextTransparency=function()return if c.Selected then b.Theme.Text.SelectionPrimary[2
-].Value else b.Theme.Text.Primary[2].Value end end}},g'UIListLayout'{Name=
+SelectionPrimary[2]},__contextKeys={TextColor3=function()if c.Selected then return b
+.Theme.Text.SelectionPrimary[1].Value end return b.Theme.Text.Primary[1].Value end,
+TextTransparency=function()if c.Selected then return b.Theme.Text.SelectionPrimary[2
+].Value end return b.Theme.Text.Primary[2].Value end}},g'UIListLayout'{Name=
 'UIListLayout',FillDirection=Enum.FillDirection.Horizontal,Padding=UDim.new(0,2)
 ,SortOrder=Enum.SortOrder.LayoutOrder},g'ImageLabel'{Name='Symbol',Visible=false
 ,AnchorPoint=Vector2.new(0.5,0.5),BackgroundColor3=Color3.fromRGB(255,255,255),
@@ -2907,10 +2902,10 @@ BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,
 Image='rbxassetid://127049167227557',LayoutOrder=1,Position=UDim2.fromScale(0.5,
 0.5),Size=UDim2.fromOffset(20,20),__dynamicKeys={ImageColor3=b.Theme.Controls.
 Selection[1],ImageTransparency=b.Theme.Controls.Selection[2]},__contextKeys={
-ImageColor3=function()return if c.Selected then b.Theme.Text.SelectionPrimary[1].
-Value else b.Theme.Controls.Selection[1].Value end end,ImageTransparency=function()
-return if c.Selected then b.Theme.Text.SelectionPrimary[2].Value else b.Theme.Controls
-.Selection[2].Value end end}}},g'Frame'{Name='Trailing',AutomaticSize=Enum.
+ImageColor3=function()if c.Selected then return b.Theme.Text.SelectionPrimary[1].
+Value end return b.Theme.Controls.Selection[1].Value end,ImageTransparency=function()
+if c.Selected then return b.Theme.Text.SelectionPrimary[2].Value end return b.Theme.Controls
+.Selection[2].Value end}}},g'Frame'{Name='Trailing',AutomaticSize=Enum.
 AutomaticSize.XY,BackgroundColor3=Color3.fromRGB(255,255,255),
 BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,
 LayoutOrder=1,Size=UDim2.fromOffset(20,16)}}))j.Trailing=(j.Body:FindFirstChild
@@ -2930,14 +2925,9 @@ ScrollBarThickness=7,Size=UDim2.fromScale(1,1),g'UIListLayout'{Name=
 17),PaddingRight=UDim.new(0,17),PaddingTop=UDim.new(0,17)}}))end)()local l=e.
 Wrap(c,{Title=function(l)j.Title.Text=l end,Icon=function(l)j.Symbol.Visible=l
 and true or false if l then j.Symbol.Image=l end end,Indentation=function(l)j.
-Padding.PaddingLeft+=UDim.new(0,(11*l))end,Selected=function(l)j.Body.
-Transparency=if l then b.Theme.Controls.SelectionFocused[2].Value else 1 end j.Title.
-TextColor3=if l then b.Theme.Text.SelectionPrimary[1].Value else b.Theme.Text.Primary[
-1].Value end j.Title.TextTransparency=if l then b.Theme.Text.SelectionPrimary[2].Value
-else b.Theme.Text.Primary[2].Value end j.Symbol.ImageColor3=if l then b.Theme.Text.
-SelectionPrimary[1].Value else b.Theme.Controls.Selection[1].Value end j.Symbol.
-ImageTransparency=if l then b.Theme.Text.SelectionPrimary[2].Value else b.Theme.
-Controls.Selection[2].Value end j.Page.Parent=l and h and h.__container or nil end},
+Padding.PaddingLeft+=UDim.new(0,(11*l))end,Selected=function(l)if l then j.Body.
+Transparency=b.Theme.Controls.SelectionFocused[2].Value j.Title.TextColor3=b.Theme.Text.SelectionPrimary[1].Value j.Title.TextTransparency=b.Theme.Text.SelectionPrimary[2].Value j.Symbol.ImageColor3=b.Theme.Text.SelectionPrimary[1].Value j.Symbol.ImageTransparency=b.Theme.Text.SelectionPrimary[2].Value else j.Body.
+Transparency=1 j.Title.TextColor3=b.Theme.Text.Primary[1].Value j.Title.TextTransparency=b.Theme.Text.Primary[2].Value j.Symbol.ImageColor3=b.Theme.Controls.Selection[1].Value j.Symbol.ImageTransparency=b.Theme.Controls.Selection[2].Value end j.Page.Parent=l and h and h.__container or nil end},
 j.Body)l.Navigate=function(m,n)if not n or type(n)~='table'or n.Type~='Page'then
 warn'Tab:Navigate expects a Page component.'return end local o=n.Structures.Page
 if l.Selected and h and h.__container then if j.Page then j.Page.Parent=nil end
