@@ -1,5 +1,5 @@
--- Cascade UI: https://github.com/biggaboy212/Cascade — docs https://biggaboy212.github.io/Cascade/
--- ถ้ามีไฟล์ dist.luau ข้างสคริปต์ (เช่น โฟลเดอร์ executor) จะโหลดตัวนั้นก่อน — ใช้สำหรับ build ที่แพตช์แล้ว
+-- Cascade (upstream): https://github.com/biggaboy212/Cascade — docs https://biggaboy212.github.io/Cascade/
+-- โหลด dist.luau จาก release ของเรา (แพตช์แล้ว): https://github.com/PThitipat/CascadeUI/releases
 local function import(owner, repo, version, file)
 	local tag = (version == "latest" and "latest/download" or "download/" .. version)
 	return loadstring(
@@ -8,12 +8,7 @@ local function import(owner, repo, version, file)
 	)()
 end
 
-local cascade
-if typeof(isfile) == "function" and typeof(readfile) == "function" and isfile("dist.luau") then
-	cascade = loadstring(readfile("dist.luau"), "dist.luau")()
-else
-	cascade = import("biggaboy212", "Cascade", "latest", "dist.luau")
-end
+local cascade = import("PThitipat", "CascadeUI", "latest", "dist.luau")
 
 local TweenService = game:GetService("TweenService")
 local HttpService = game:GetService("HttpService")
