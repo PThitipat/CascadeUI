@@ -3095,9 +3095,8 @@ BackgroundTransparency=1,BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,
 Image='rbxassetid://104426531889908',ImageColor3=Color3.fromRGB(0,0,0),
 ImageTransparency=0.91,Size=UDim2.fromOffset(28,16),__dynamicKeys={ImageColor3=j
 .SwitchOff[1],ImageTransparency=j.SwitchOff[2]},__contextKeys={ImageColor3=
-function()return c.Value and j.SwitchOn[1].Value or j.SwitchOff[1].Value end,
-ImageTransparency=function()return c.Value and j.SwitchOn[2].Value or j.
-SwitchOff[2].Value end},g'ImageLabel'{Name='Knob',AnchorPoint=Vector2.new(0,0.5)
+function()if c.Value then local v=j.SwitchOn[1].Value if typeof(v)=="Color3"then return v end v=j.SwitchOff[1].Value if typeof(v)=="Color3"then return v end else local v=j.SwitchOff[1].Value if typeof(v)=="Color3"then return v end v=j.SwitchOn[1].Value if typeof(v)=="Color3"then return v end end return Color3.new(0.5,0.5,0.5)end,
+ImageTransparency=function()if c.Value then local v=j.SwitchOn[2].Value if typeof(v)=="number"then return v end v=j.SwitchOff[2].Value if typeof(v)=="number"then return v end else local v=j.SwitchOff[2].Value if typeof(v)=="number"then return v end v=j.SwitchOn[2].Value if typeof(v)=="number"then return v end end return 0.5 end},g'ImageLabel'{Name='Knob',AnchorPoint=Vector2.new(0,0.5)
 ,BackgroundColor3=Color3.fromRGB(255,255,255),BackgroundTransparency=1,
 BorderColor3=Color3.fromRGB(0,0,0),BorderSizePixel=0,Image=
 'rbxassetid://99107881432922',Position=UDim2.new(0,1,0.5,0),Size=UDim2.
@@ -3110,10 +3109,8 @@ fromOffset(16,16),__dynamicKeys={ImageColor3=j.KnobEffects[1],ImageTransparency=
 j.KnobEffects[2]}}},g'UIGradient'{Name='UIGradient',Rotation=90,__dynamicKeys={
 Color=j.DepthEffect[1]}}}}))k.Switch=(k.Body:FindFirstChild'Switch')k.Knob=(k.
 Switch:FindFirstChild'Knob')local l local m={Value=function(m,n)n=(n==nil and
-true)or false local o,p,q=TweenInfo.new(0.4,Enum.EasingStyle.Exponential,Enum.
-EasingDirection.Out),{Position=m and UDim2.new(0,13,0.5,0)or UDim2.new(0,1,0.5,0
-)},{ImageColor3=m and j.SwitchOn[1].Value or j.SwitchOff[1].Value,
-ImageTransparency=m and j.SwitchOn[2].Value or j.SwitchOff[2].Value}if n then h:
+true)or false local o=TweenInfo.new(0.4,Enum.EasingStyle.Exponential,Enum.
+EasingDirection.Out)local p={Position=m and UDim2.new(0,13,0.5,0)or UDim2.new(0,1,0.5,0)}local ic,it if m then ic,it=j.SwitchOn[1].Value,j.SwitchOn[2].Value else ic,it=j.SwitchOff[1].Value,j.SwitchOff[2].Value end if typeof(ic)~="Color3"then if m then ic=j.SwitchOff[1].Value else ic=j.SwitchOn[1].Value end end if typeof(ic)~="Color3"then ic=Color3.new(0.5,0.5,0.5)end if typeof(it)~="number"then if m then it=j.SwitchOff[2].Value else it=j.SwitchOn[2].Value end end if typeof(it)~="number"then it=0.5 end local q={ImageColor3=ic,ImageTransparency=it}if n then h:
 Create(k.Knob,o,p):Play()h:Create(k.Switch,o,q):Play()else k.Knob.Position=p.
 Position k.Switch.ImageColor3=q.ImageColor3 k.Switch.ImageTransparency=q.
 ImageTransparency end if c.ValueChanged and n then c.Value=m task.spawn(c.
